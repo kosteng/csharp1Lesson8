@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace WinLesson8
 {
-    class Questions
+    public class Questions
     {
         private string text;
         private bool trueOrFalse;
