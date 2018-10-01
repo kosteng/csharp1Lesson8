@@ -15,6 +15,7 @@ namespace WinLesson8
         public Form1()
         {
             InitializeComponent();
+            label1.DataBindings.Add("Text", trackBar1, "Value");
         }
     }
 }
