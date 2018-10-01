@@ -10,7 +10,7 @@ namespace lesson8
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("  ");
+            Console.WriteLine(" дописал");
             Console.ReadKey();
         }
     }
