@@ -41,6 +41,9 @@ namespace WinLesson8
     {
         private string fileName;
         private List<Questions> list;
+        void l()
+        {
+        }
 
         public List<Questions> List
         {
