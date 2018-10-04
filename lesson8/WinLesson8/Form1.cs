@@ -24,7 +24,7 @@ namespace WinLesson8
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Xml файлы | */.xml | Все файлы | *.*";
+            saveFileDialog.Filter = "Xml файлы|*.xml|Все файлы|*.*";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 dataBase = new TrueOrFalse(saveFileDialog.FileName);
@@ -44,7 +44,20 @@ namespace WinLesson8
 
         private void открытьToolStripButton_Click(object sender, EventArgs e)
         {
-            //dataBase.Load();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                dataBase = new TrueOrFalse(openFileDialog.FileName);
+                dataBase.Load();
+                toolStripStatusLabel1.Text = System.IO.Path.GetFileName(openFileDialog.FileName);
+                bindingSource.DataSource = dataBase;
+                bindingSource.DataMember = "list";
+                tbQuestions.DataBindings.Add("Text", bindingSource, "Text");
+                checkBox1.DataBindings.Add("Checked", bindingSource, "TrueOrFalse");
+                bindingNavigator1.BindingSource = bindingSource;
+            }
+
+            
         }
     }
 }
